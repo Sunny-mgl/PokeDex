@@ -18,7 +18,7 @@ const PokeCard = ({url}) => {
     //console.log(card)
 
     return (
-        <div className='hola'>
+        <div className='hello'>
         <div className='card' onClick={() => navigate(`/characters/${card.id}`)}>
             <h1>{card.name}</h1>
             <img src={card.sprites?.front_default

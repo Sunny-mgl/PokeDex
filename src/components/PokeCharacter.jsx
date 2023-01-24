@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const PokeCharacter = () => {
 
@@ -17,8 +17,15 @@ const PokeCharacter = () => {
 
 const {id} = useParams()
 
+const navigate = useNavigate()
+
+const backCharacters = () => {
+  navigate('/characters')
+  }
+
     return (
         <div>
+            <button onClick={backCharacters}><i className="fa-solid fa-left-long"></i></button>
             <h1>Pokemon Details</h1>
             <h2>{pokeDetail.name}</h2> 
             <p>id: <b>{id}</b></p>

@@ -40,8 +40,14 @@ const filterType = e => {
    .then( res => setPokeApi(res.data.moves))
 }
 
+const back = () => {
+navigate('/')
+}
+
+
     return (
         <div>
+            <button onClick={back}><i className="fa-solid fa-left-long"></i></button>
             <h1>Characters</h1>
             <h2>Welcome to {pokes}</h2>
             <div>
@@ -55,6 +61,7 @@ const filterType = e => {
                 </button>
             </div>
             <div>
+              
                 <select onChange={filterType} name="" id="">
                    {
                    kinds.map(kind => (
