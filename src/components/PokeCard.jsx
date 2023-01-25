@@ -21,8 +21,7 @@ const PokeCard = ({url}) => {
         <div className='hello'>
         <div className='card' onClick={() => navigate(`/characters/${card.id}`)}>
             <h1>{card.name}</h1>
-            <img src={card.sprites?.front_default
-             } alt="" />
+            <img src={card.sprites?.other.dream_world.front_default} alt="" />
         </div>
         </div>
     );
