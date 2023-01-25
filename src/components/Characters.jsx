@@ -18,7 +18,7 @@ const Characters = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/")
+        axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1279")
             .then((res) => setPokeApi(res.data.results))
 
         axios.get("https://pokeapi.co/api/v2/type/")
@@ -40,12 +40,23 @@ const Characters = () => {
             .then(res => setPokeApi(res.data.pokemon))
     }
 
-    console.log(pokeApi);
+    // console.log(pokeApi);
 
     const back = () => {
         navigate('/')
     }
 
+    const [page, setPage] = useState(1)
+    const perPage = 20
+    const lastIndex = page * perPage // aqui le estoy diciendo que si el first es 5 last sea 10
+    const firsIndex = lastIndex - perPage
+    const pokePagination = pokeApi.slice(firsIndex, lastIndex)
+    const lastPage = Math.ceil(pokeApi.length / perPage) // con esto estoy obteniendo el total de paginas, los arrglos pueden llevan length
+
+    const numbPage = [] //como es un arreglo le hago un map
+    for (let i = 1; i <= lastPage; i++) {
+        numbPage.push(i)
+    }
 
     return (
         <div>
@@ -53,18 +64,32 @@ const Characters = () => {
                 <img src="https://profound-froyo-7826bf.netlify.app/assets/image11-4a847bec.png" alt="" />
             </div>
             <button className='navButton' onClick={back}><i className="fa-solid fa-left-long"></i></button>
-            <h2 className='welcome'>Welcome {pokes}, here youcan find your favorite pokemon</h2>
+            <h1 className='welcome'>Welcome {pokes},</h1>
+            <h2 className='welcomes'> Here you can find your favorite pokemon</h2>
             <div>
-                <input type="text"
+                <input className='search' type="text"
                     placeholder='search characters'
                     value={searchInput}
                     onChange={e => setSearchInput(e.target.value)}
                 />
-                <button onClick={search}>
+                <button className='button-pagination1' onClick={search}>
                     Search
                 </button>
             </div>
+
             <div>
+
+                {/* generamos un boton para para modificar la pagina sin tner que cambiar en page */}
+                <div>
+                    <button className='button-pagination' onClick={() => setPage(page - 1)} disabled={page === 1}> {/* esto es para que cambie y valla aumentando 1 */}
+                        <i className="fa-solid fa-chevron-left"></i>
+                    </button>
+                    {page} / {lastPage}
+                    <button className='button-pagination' onClick={() => setPage(page + 1)} disabled={page === lastPage}> {/* esto es para que cambie y valla aumentando 1  y que se desabilite cuando se uno*/}
+                        <i className="fa-solid fa-angle-right"></i>
+                    </button>
+
+                </div>
 
                 <select onChange={filterType} name="" id="">
                     {
@@ -76,21 +101,26 @@ const Characters = () => {
                     }
                 </select>
             </div>
-            <ul>
-                {pokeApi?.map(poke => (
 
-
+            {
+                pokePagination?.map(poke => (
                     <PokeCard
                         key={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
                         url={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
                     />
 
-                ))}
+                ))
+            }
 
-            </ul>
 
-            <div>
-      </div>
+            {/* esto es para los botones  */}
+            {
+                numbPage.map(number => (
+                  
+                        <button  key={number} className='button-number' onClick={() => setPage(number)} >{number}</button>
+                    
+                ))
+            }
 
 
         </div>
