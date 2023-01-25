@@ -78,11 +78,9 @@ const PokeCharacter = () => {
         <img src="https://profound-froyo-7826bf.netlify.app/assets/image11-4a847bec.png" alt="" />
       </div>
       
-      <div className='navbar'></div>
-      <div className='circle3'></div>
-      <div className='circle4'></div>
-    
 
+    
+ 
 
 
 

@@ -49,9 +49,11 @@ const Characters = () => {
 
     return (
         <div>
-            <button onClick={back}><i className="fa-solid fa-left-long"></i></button>
-            <h1>Characters</h1>
-            <h2>Welcome to {pokes}</h2>
+            <div className='pokedex-detail'>
+                <img src="https://profound-froyo-7826bf.netlify.app/assets/image11-4a847bec.png" alt="" />
+            </div>
+            <button className='navButton' onClick={back}><i className="fa-solid fa-left-long"></i></button>
+            <h2 className='welcome'>Welcome {pokes}, here youcan find your favorite pokemon</h2>
             <div>
                 <input type="text"
                     placeholder='search characters'
@@ -86,6 +88,9 @@ const Characters = () => {
                 ))}
 
             </ul>
+
+            <div>
+      </div>
 
 
         </div>
