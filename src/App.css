@@ -24,13 +24,48 @@ li{
   list-style: none;
 }
 
+.settings-menu{
+  padding: 6rem;
+}
+
+.darkmode-switch{
+  position: absolute;
+  top: 300px;
+}
+
+.settingsbutton{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(230, 230, 230);
+  position: fixed;
+  z-index: 1500;
+  top: 11px;
+  right: 40px;
+}
+
+.settingsbutton i{
+  transition: transform .5s ease-in-out;
+}
+
+.settingsbutton i:hover{
+    /* color: blueviolet; */
+    transform: rotate(260deg);
+}
+
+
 .card{
   border: 1px solid rgba(0, 0, 0, 0.116);
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  cursor: pointer;
 }
+
+/* .card:hover{
+  transform: scale(1.1);
+} */
 
 .hello{
  display: flex;
@@ -47,20 +82,20 @@ li{
  position: absolute;
   width: 60%;
   left: 180px;
-  top: 50px;
+  top: 100px;
 }
 
 .pika{
   width: 9%;
   position: absolute;
   left: 565px;
-  top: 145px;
+  top: 265px;
 }
 
 .hello-trainer{
   position: absolute;
-  left: 299px;
-  top: 175px; 
+  left: 315px;
+  top: 210px; 
 }
 
 .hello-trainer h1{
@@ -69,8 +104,8 @@ li{
 
 .input-button{
   position: absolute;
-  top: 290px;
-  left: 305px;
+  top: 350px;
+  left: 295px;
   box-shadow: 2px 2px 3px 2px rgb(221, 221, 221);
 }
 
@@ -99,45 +134,45 @@ li{
 .rectangle1{
   background-color: rgba(221, 26, 26, 1);
   position: absolute;
-  width: 910.5px;
+  width: 100%;
   height: 60px;
   top: 380px;
   left: 0px;
  
 }
 
-.rectangle2{
+/* .rectangle2{
   background-color: rgba(12, 12, 12, 1);
   position: absolute;
-  width: 910.5px;
+  width: 100%;
   height: 25px;
-  top: 416.9px;
+  top: 417px;
   left: 0px; 
-}
+} */
 
 
-.circle2{
-  width: 45px;
-  height: 45px;
+/* .circle2{
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 1);
   border: 4px solid rgba(0, 0, 0, 1);
   position: absolute;
-  top: 394px;
-  left: 47%;
+  top: 385px;
+  left: 650px;
 
 }
 
 .circle1{
   background-color: rgba(33, 33, 33, 1);
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   position: absolute;
-  top: 404px;
-  left: 438px;
+  top: 395px;
+  left: 660px;
   border: 4px solid rgba(0, 0, 0, 1);
-}
+} */
 
 
 .details{
@@ -268,7 +303,7 @@ li{
     width: 100%;
     height: 70px;
     background-color: rgba(221, 26, 26, 1);
-    border-bottom: 1.5rem solid rgba(0, 0, 0, 1);
+    border-bottom: 1.4rem solid rgba(0, 0, 0, 1);
     z-index: 1000;
 }
 
@@ -322,5 +357,9 @@ li{
   z-index: 1500;
   width: 220px;
 
+}
+
+.welcome{
+  padding-top: 6rem;
 }
 

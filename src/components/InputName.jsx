@@ -18,6 +18,10 @@ const InputName = () => {
 
     return (
         <div className='begin'>
+
+            
+
+
             <div>
                 <img className='pokedex' src="https://profound-froyo-7826bf.netlify.app/assets/image11-4a847bec.png" alt="" />
 
@@ -29,9 +33,6 @@ const InputName = () => {
                 </div>
             </div>
             <div>
-                <img className='pika' src="https://profound-froyo-7826bf.netlify.app/assets/pngegg-406ea721.png" alt="" />
-            </div>
-            <div>
                 <div className='input-button'>
                     <input className='input' type="text" placeholder='Your name'
                         value={inputPoke}
@@ -39,11 +40,6 @@ const InputName = () => {
                     />
                     <button className='submit-button' onClick={click}>Submit</button>
                 </div>
-
-                <div className='rectangle1'></div>
-                <div className='rectangle2'></div>
-                <div className='circle2'></div>
-                <div className='circle1'></div>
             </div>
         </div>
     );
