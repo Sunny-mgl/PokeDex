@@ -101,24 +101,27 @@ const Characters = () => {
                     }
                 </select>
             </div>
+            <ul className='pokemonsList'>
+                {
+                    pokePagination?.map(poke => (
+                        <PokeCard
+                            key={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
+                            url={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
+                        />
 
-            {
-                pokePagination?.map(poke => (
-                    <PokeCard
-                        key={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
-                        url={poke.pokemon?.url ? poke.pokemon?.url : poke?.url}
-                    />
+                    ))
+                }
+            </ul>
 
-                ))
-            }
+
 
 
             {/* esto es para los botones  */}
             {
                 numbPage.map(number => (
-                  
-                        <button  key={number} className='button-number' onClick={() => setPage(number)} >{number}</button>
-                    
+
+                    <button key={number} className='button-number' onClick={() => setPage(number)} >{number}</button>
+
                 ))
             }
 
