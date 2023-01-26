@@ -23,11 +23,55 @@ const PokeCharacter = () => {
     navigate('/characters')
   }
 
+  const changeColorss = () => {
+    if (pokeDetail.types?.[0].type.name === "normal") {
+        return "#A8A77A"
+    } else if (pokeDetail.types?.[0].type.name === "water") {
+        return "#6390F0"
+    } else if (pokeDetail.types?.[0].type.name === "fire") {
+        return "#EE8130"
+    } else if (pokeDetail.types?.[0].type.name === "electric") {
+        return "#F7D02C"
+    } else if (pokeDetail.types?.[0].type.name === "grass") {
+        return "#7AC74C"
+    } else if (pokeDetail.types?.[0].type.name === "ice") {
+        return "#96D9D6"
+    } else if (pokeDetail.types?.[0].type.name === "fighting") {
+        return "#C22E28"
+    } else if (pokeDetail.types?.[0].type.name === "poison") {
+        return "#A33EA1"
+    } else if (pokeDetail.types?.[0].type.name === "ground") {
+        return "#E2BF65"
+    } else if (pokeDetail.types?.[0].type.name === "flyting") {
+        return "#A98FF3"
+    } else if (pokeDetail.types?.[0].type.name === "psychic") {
+        return "#F95587"
+    } else if (pokeDetail.types?.[0].type.name === "bug") {
+        return "#A6B91A"
+    } else if (pokeDetail.types?.[0].type.name === "rock") {
+        return "#B6A136"
+    } else if (pokeDetail.types?.[0].type.name === "ghost") {
+        return "#735797"
+    } else if (pokeDetail.types?.[0].type.name === "dragon") {
+        return "#6F35FC"
+    } else if (pokeDetail.types?.[0].type.name === "dark") {
+        return "#705746"
+    } else if (pokeDetail.types?.[0].type.name === "steel") {
+        return "#B7B7CE"
+    } else if (pokeDetail.types?.[0].type.name === "fairy") {
+        return "#D685AD"
+    } else if (pokeDetail.types?.[0].type.name === "unknown") {
+        return "gray"
+    } else {
+        return "plum"
+    }
+}
+
   return (
     <div className='background' >
       <div className='details'>
         <div>
-          <div className='pokemon'>
+          <div className='pokemon' style={{ background: changeColorss() }}>
             <div>
               <img className='poke-img' src={pokeDetail.sprites?.other.dream_world.front_default} alt="" />
             </div>
@@ -43,7 +87,7 @@ const PokeCharacter = () => {
         </div>
 
 
-        <div className='movements'>
+        <div className='movements' style={{ background: changeColorss() }}>
           <h1>Movements</h1>
           <ul className='movements-list'>
             {pokeDetail.moves?.map(move => (
@@ -56,7 +100,7 @@ const PokeCharacter = () => {
 
 
         <div className='stadistics'>
-          <div className='type'>
+          <div className='type' style={{ background: changeColorss() }}>
             <h1>type</h1>
             <div className='type-habilities'>
               <p className='type-button'>{pokeDetail.types?.[0]?.type.name}</p>
@@ -64,7 +108,7 @@ const PokeCharacter = () => {
             </div>
 
           </div>
-          <div className='habilities'>
+          <div className='habilities' style={{ background: changeColorss() }}>
             <h1>habilities</h1>
             <div className='type-habilities'>
               <p className='habilities-button'>{pokeDetail.abilities?.[0]?.ability.name}</p>

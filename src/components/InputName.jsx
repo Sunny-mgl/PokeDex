@@ -25,14 +25,14 @@ const InputName = () => {
             <div>
                 <img className='pokedex' src="https://profound-froyo-7826bf.netlify.app/assets/image11-4a847bec.png" alt="" />
 
-
+           
                 <div className='hello-trainer'>
-                    <h1>Hello Trainer!</h1>
+                    <h1  className='hello-input'>Hello Trainer!</h1>
                     <br />
-                    <p>To beging insert your name</p>
+                    <p className='hello-input'>To beging insert your name</p>
                 </div>
             </div>
-            <div>
+            <div >
                 <div className='input-button'>
                     <input className='input' type="text" placeholder='Your name'
                         value={inputPoke}

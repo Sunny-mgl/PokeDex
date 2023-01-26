@@ -91,7 +91,7 @@ li{
 .pokedex{
  position: absolute;
   width: 60%;
-  left: 180px;
+  left: 280px;
   top: 100px;
 }
 
@@ -104,9 +104,11 @@ li{
 
 .hello-trainer{
   position: absolute;
-  left: 315px;
-  top: 210px; 
+  top: 310px; 
+  left: 500px;
 }
+
+
 
 .hello-trainer h1{
   font-size: 40px;
@@ -114,8 +116,8 @@ li{
 
 .input-button{
   position: absolute;
-  top: 350px;
-  left: 295px;
+  top: 450px;
+  left: 495px;
   box-shadow: 2px 2px 3px 2px rgb(221, 221, 221);
 }
 
